@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+  if [ $1 == 'tmpdelete' ]
+  then
+    rm /data/data/com.termux/files/usr/share/wfdroid/upgradetmp
+
+  else
+    echo "[+] wfdroid UPDATE & UPGRADE...";
+    wget https://raw.githubusercontent.com/bytezcrew/wfdroid-termux/master/upgradetmp
+    mv upgradetmp /data/data/com.termux/files/usr/share/wfdroid/
+    chmod 775 /data/data/com.termux/files/usr/share/wfdroid/upgradetmp
+    /data/data/com.termux/files/usr/share/wfdroid/upgradetmp
+  fi

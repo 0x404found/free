@@ -1,0 +1,50 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+echo "##############################";
+echo "Recoded By 0x404              ";
+echo "DikyyPratama                  ";
+echo "phallepy@gmail.com            ";
+echo "------------- Admin Finder ---";
+echo -n "Enter URL : "; read url
+echo "";
+echo "Enter Wordlist File";
+echo -n "default [dirlist.txt] : "; read listname
+echo $listname total $(wc -l < /data/data/com.termux/files/usr/share/wfdroid/list/$listname) Wordlist
+i=0
+for item in $(cat /data/data/com.termux/files/usr/share/wfdroid/list/$listname);
+do
+    i=$[i+1]
+    testurl=$(curl -s -o /dev/null -w '%{http_code}' $url'/'$item)
+
+    if [[ $testurl == 200 ]]
+    then
+        echo '['$i'] '$url'/'$item' = '$testurl
+        echo $url'/'$item >> /data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt
+
+    elif [[ $testurl == 301 ]]
+    then
+        echo '['$i'] '$url'/'$item' = '$testurl
+        echo $url'/'$item >> /data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt
+
+    elif [[ $testurl == 302 ]]
+    then
+        echo '['$i'] '$url'/'$item' = '$testurl
+        echo $url'/'$item >> /data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt
+
+    elif [[ $testurl == 401 ]]
+    then
+        echo '['$i'] '$url'/'$item' = '$testurl
+        echo $url'/'$item >> /data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt
+
+    elif [[ $testurl == 403 ]]
+    then
+        echo '['$i'] '$url'/'$item' = '$testurl
+        echo $url'/'$item >> /data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt
+
+    else
+        echo '['$i'] Mencari...'
+    fi
+done
+
+echo "If done check in : ";
+echo "/data/data/com.termux/files/usr/share/wfdroid/done/FOUND_LOGIN.txt";
