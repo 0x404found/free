@@ -13,8 +13,12 @@ apt upgrade wget
 
 hash -r
 
-wget https://raw.githubusercontent.com/…/wfdro…/master/wfdinstall
+wget https://raw.githubusercontent.com/0x404found/free/master/wfdinstall
 
 chmod +x wfdinstall
 
 ./wfdinstall
+
+Recode By 0x404 
+
+Big Thanks To Schopat - IndoXploit - Indonesian Coders
