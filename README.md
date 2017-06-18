@@ -7,14 +7,14 @@ Install TermuX before! in your Android:
 https://play.google.com/store/apps/details?id=com.termux
 
 How to Install wfdroid ?
-1. Open your TermuX
-2. wget https://raw.githubusercontent.com/bytezcrew/wfdroid-termux/master/installer
-3. ./installer
+packages install wget
 
-by Schopath ( BytezCrew )
+apt upgrade wget
 
-Greet:
+hash -r
 
-Ccocot ~ l0c4lh34rtz ~ Jingklong
+wget https://raw.githubusercontent.com/…/wfdro…/master/wfdinstall
 
-BAHARI TROUBLE MAKER (team) - INDOXPLOIT (team) - BERDENDANGC0DE (team)
+chmod +x wfdinstall
+
+./wfdinstall
